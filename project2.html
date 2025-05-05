@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+    <title>Soraya Barman's Portfolio</title>
+</head>
+
+<div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <div class="dropdown">
+        <button class="dropbtn">Projects</button>
+        <div class="dropdown-content">
+            <a href="project.html">Singapore Carpark Availability Predictor</a>
+            <a href="project2.html">Rumour Simulation</a>
+        </div>
+    </div>
+    <a href="contact.html">Contact</a>
+</div>
+
+
+<body>
+    <h2>
+        <span class="highlight-letter">R</span>umour <span class="highlight-letter">S</span>imulation.
+    </h2>
+
+    <h3>
+        Code Access & How to Run It.
+    </h3>
+
+    <div class="para">
+        <p>You can find the full source code and instructions in the public repository</p>
+
+        <p><b>GitHub Repo:</b> <a
+                href=https://github.com/susubman/RumourSimulation>github.com/susubman/RumourSimulation</a></p>
+    </div>
+
+
+    <h3>
+        Motivation.
+    </h3>
+
+    <div class="para">
+        <p>
+            This project brings together two things I care deeply about: understanding people and writing code.
+        </p>
+
+        <p>
+            Before I pivoted into Computer Science, I studied Sociology — a field that taught me to think critically
+            about how ideas spread and how communities form around them.
+            I’ve written essays on what feminism means today, the rise of anti-vaxxers, and how modern cults use online
+            platforms to recruit and retain followers. What stood out to me across these topics was <b>the power of
+                misinformation </b> —
+            how a rumour can start small and yet influence entire networks of people, often with serious real-world
+            effects.
+        </p>
+
+        <p>
+
+            That insight led to this simulation: a way to model how rumours might spread through a network of
+            individuals, with different parameters influencing who gets "infected" by the rumour and how quickly.
+        </p>
+
+        <p>
+            I chose to build this in Java because it's a language I’m comfortable with, and one that’s particularly
+            strong when it comes to building structured, scalable simulations.
+            I also wanted to push myself beyond just scripting or visualising — I wanted to build something that
+            reflected solid object-oriented thinking and made good use of classes, interfaces, and simulation loops.
+        </p>
+
+        <p>
+            This was more than a coding exercise. It was a way to connect my sociological background with my growing
+            skills in software development — and to explore how tech can be used to better understand the social
+            challenges we face.
+
+        </p>
+    </div>
+
+    <h3>
+        How I Built It.
+    </h3>
+
+    <div class="para">
+        <p><b>Language used: </b> Java — great for modelling object-based systems.</p>
+    </div>
+
+
+
+    <h4>
+        Main Components.
+    </h4>
+
+    <ul class="list-block">
+        <li><code>Main.java</code>: Entry point of the program, sets up the simulation.</li>
+        <li><code>Person.java</code>: Each person has traits like whether they’ve heard or spread the rumour.</li>
+        <li><code>Network.java</code>: Creates a social graph of people and hadles who is connected to whom.</li>
+        <li><code>RumourSimulation.java</code>: Runs the simulation over time — deciding who hears the rumour and
+            who spreads it.</li>
+        <li><code>Stats.java</code>: Tracks and outputs data like how many people have heard the rumour and who
+            spreads it.</li>
+    </ul>
+
+    <h4>
+        The Logic.
+    </h4>
+    <ul class="list-block">
+        <li>The sumulation starts with one person hearing a rumour.</li>
+        <li>Each time step, people interact with their neighbours.</li>
+        <li>Depedning on the probability (e.g., how gullible or cautious they are), people decide whether to beleive
+            or share the rumour</li>
+        <li>A proportion of people are <b>fact-checkers</b> — they independently verify that they hear. If they
+            fact-check a rumour, they become immune to it and stop spreading it.</li>
+        <li>The rumour keeps spreading until it fizzles out or everyone has heard it.</li>
+    </ul>
+
+    <h3>
+        What I Learned.
+    </h3>
+
+    <ul class="list-block">
+        <li>How to design and implement a simulation from scratch using object-orientated principles.</li>
+        <li>Deeper understanding of how rumours spread and the factors that can accelerate or suppress that spread —
+            like social connections and gullibility.</li>
+        <li>Practiced breaking down a complex idea into modular, manageable Java classes and logic.</li>
+        <li>Balancing sociology ideas with technical modelling — a challenge I really enjoyed.</li>
+    </ul>
+
+
+
+
+</body>
+
+</html>

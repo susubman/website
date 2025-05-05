@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+    <title>Soraya Barman's Portfolio</title>
+</head>
+
+<div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <div class="dropdown">
+        <button class="dropbtn">Projects</button>
+        <div class="dropdown-content">
+            <a href="project.html">Singapore Carpark Availability Predictor</a>
+            <a href="project2.html">Rumour Simulation</a>
+        </div>
+    </div>
+    <a href="contact.html">Contact</a>
+</div>
+
+
+<body>
+    <h2>
+        <span class="highlight-letter">S</span>ingapore <span class="highlight-letter">C</span>arpark <span class="highlight-letter">A</span>vailability <span class="highlight-letter">P</span>redictor
+    </h2>
+
+    <h3>
+        Code Access & How to Run It.
+    </h3>
+
+    <div class="para">
+        <p>You can find the full source code and instructions in the public repository.</p>
+        <p><b>GitHub Repo:</b> <a href=https://github.com/susubman/sg-carpark-predictor> github.com/susubman/sg-carpark-predictor</a></p>
+    </div>
+
+    <h3>
+        Motivation.
+    </h3>
+
+    <div class="para">
+        <p>
+            I grew up in Singapore, and the issue of car park availability is something I’ve experienced firsthand. 
+            With the city’s high population density and government-regulated car ownership, finding a parking space can be a challenge, particularly during peak hours.
+            This personal connection sparked my interest in using machine learning to predict parking availability.
+        </p>
+
+        <p>
+            As part of my <b>Master's in Computer Science</b>, I wanted to apply machine learning techniques to real-world problems, specifically one that had clear practical implications. 
+            I decided to focus on predicting car park availability in Housing Development Board (HDB) car parks, utilizing not only historical data but also contextual information like weather, public holidays, and the outcomes of Certificate of Entitlement (COE) bidding.
+        </p>
+
+        <p>
+            The goal of the project was to understand how these factors might influence parking demand and whether they could improve the accuracy of predictive models. 
+            This project gave me the opportunity to combine my knowledge of machine learning with a familiar, real-world issue that affects many people in Singapore.
+        </p>
+    </div>
+
+    <h3>
+        How I Built It.
+    </h3>
+
+    <div class="para">
+        <p><b>Language used: </b>Python — perfect for machine learning tasks and data manipulation.</p>
+    </div>
+
+    <h4>
+        Main Components.
+    </h4>
+
+    <ul class="list-block">        
+        <li><code>RF_parking.py</code>: Trains and evaluates Random Forest models to predict the number of lots available in the next hour.</li>
+        <li><code>LSTM_parking.py</code>: Builds, trains and evalutes LSTM models using Tensorflow/Keras, leveraging temporal sequences for evaluation.</li>
+        <li><code>dataset.py</code>: Core data preperation script — connects to a PostgreSQL database, handles missing values, merges and scales contextual features, generates the target variable for supervised learning.</li>
+        <li><code>datasets/</code>: Directory containing CSV files and the <b>database schema</b> used to create and populate tables in PostgreSQL.</li>
+        <li><code>requirements.txt</code>: Specifies Python dependencies such as Pandas, Scikit-Learn, TensorFlow, and Psycopg.</li>
+    </ul>
+
+    <h4>
+        The Logic.
+    </h4>
+
+    <ol class="ordered-list">
+        <li><b>Data Processing:</b></li>
+
+        <ul class="list-block">
+            <li>Data from Singapore's open data portal was used, including car park lot data, weather forecasts, COE results and public holidays.</li>
+            <li>The data was preprocessed by aggregating minut-level car park availability into hourly intervals.</li>
+            <li>Contextual data like weather conditions, public holidays, and COE bidding results were integrated into the dataset.</li>
+        </ul>
+
+        <li><b>Model Development:</b></li>
+
+        <ul class="list-block">
+            <li><b>Baseline Model:</b> Trained on historical parking lot data.</li>
+            <li><b>Contextual Model:</b> Added external data (weather, public holidays, COE).</li>
+            <li>Used Scikit-Learn for Random Forest and TensorFlow for LSTM.</li>
+            <li>Tuned hyperparameters using Grid Search Cross Validation</li>
+            <li>Evaluated performance with metrics like MAE and RMSE.</li>
+        </ul>
+
+        <li><b>Final Models:</b></li>
+
+        <ul class="list-block">
+            <li><b>Random Forest:</b> Slightly outperformed LSTM in terms of accuracy and required less computational resources.</li>
+            <li><b>LSTM:</b> Good for time-series forecasting but was computationally heavier.</li>
+        </ul>
+    </ol>
+
+    <h3>
+        What I Learnt.
+    </h3>
+
+    <ul class="list-block">
+        <li><b>Time-series forecasting:</b> I gained hands-on expereince with LSTM, a model designed specifically for sequential data.</li>
+        <li><b>Machine learning in pracitce:</b> learnt how to apply different algorithms to different real-world datasets and to critically evaluate their perfomance metrics.</li>
+        <li><b>Use of a databse:</b> utilised PostgreSQL with many large datasets and managed it in SQL.</li>
+    </ul>
+
+</body>
+
+</html>
