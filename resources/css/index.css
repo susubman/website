@@ -95,15 +95,12 @@ code {
     list-style-type: decimal;
 }
 
-.ordered-list li {
-    text-align: left;
-
-}
 
 .list-block li,
 .ordered-list li {
     margin-bottom: 20px;
     font-size: 40px;
+    text-align: left;
 }
 
 .para {
