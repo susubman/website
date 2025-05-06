@@ -1,67 +1,55 @@
+/* Global styles */
 * {
     font-family: 'Georgia', serif;
     background-color: rgb(244, 220, 226);
     margin: 0;
     --pinkMenu: rgb(255, 209, 220);
+    text-align: center;
 }
 
-
+h1, h2, h3, h4 {
+    padding: 50px;
+    letter-spacing: 1px;
+    margin: 0;
+}
 
 h1 {
-    text-align: left;
     color: rgba(0, 0, 0, 0.728);
     font-size: 100px;
     font-weight: 800;
-    font-style: bold;
-    letter-spacing: 3px;
-    padding: 50px;
 }
 
 h2 {
-    text-align: left;
     color: rgba(0, 0, 0, 0.764);
-    font-style: bold;
     font-size: 100px;
     font-weight: 900;
-    padding: 50px;
-    letter-spacing: 1px;
-
 }
 
 h3 {
-    text-align: left;
     color: rgba(0, 0, 0, 0.547);
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 600;
-    padding: 50px;
-    letter-spacing: 1px;
-
 }
 
 h4 {
-    text-align: left;
     color: rgba(155, 48, 98);
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
-    padding: 50px;
-    letter-spacing: 1px;
-
 }
 
 p {
-    text-align: left;
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(0, 0, 0);
     font-weight: 500;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     line-height: 60px;
     margin-left: 5px;
 }
 
 code {
     font-family: 'Georgia', serif;
-    background-color: rgb(255, 235, 240);  /* light pink background */
-    color: rgb(155, 48, 98);  /* dark pink color */
+    background-color: rgb(255, 235, 240);
+    color: rgb(155, 48, 98);
     padding: 6px 10px;
     border-radius: 10px;
     font-size: 32px;
@@ -69,11 +57,12 @@ code {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     display: inline-block;
     margin: 5px 0;
-  }
-  
-  
+}
 
-/* for highlighting a letter with a black tile behind it */
+.nowrap {
+    white-space: nowrap;
+}
+
 .highlight-letter {
     color: rgb(255, 209, 220);
     font-size: 110px;
@@ -86,83 +75,104 @@ code {
     font-weight: bold;
     border-radius: 4px;
     margin-right: 4px;
-
+    vertical-align: baseline;
+    line-height: 1;
 }
 
-/* Style of all the bullet points list */
-.list-block {
-    list-style-type: square;
-    padding-left: 84px;
-    font-size: 40px;
+.list-block,
+.ordered-list {
+    text-align: left;
     margin-top: 30px;
     margin-bottom: 30px;
+    padding-left: 84px;
 }
 
-.list-block li {
-    margin-bottom: 20px;
-
+.list-block {
+    list-style-type: square;
 }
 
 .ordered-list {
     list-style-type: decimal;
-    padding-left: 84px;
-    font-size: 40px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
+.list-block li,
 .ordered-list li {
     margin-bottom: 20px;
+    font-size: 40px;
 }
-
 
 .para {
     border-left: 8px solid black;
     padding-left: 4px;
     margin: 50px;
+}
 
+.text-center {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
 }
 
 .text {
-    flex: 1.2;
-    padding-right: 50px;
+    flex: 2;
+    text-align: left;
+    min-width: 300px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* block of the self image */
 .image {
-    flex: 1;
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    min-width: 450px;
+    padding: 20px;
+    background-color: #fbe8f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 20px solid #ffb6c1;
 }
 
 .image img {
+    border-radius: 15px;
+    width: 100%;
     height: auto;
-    border-radius: 60px;
+    display: block;
 }
 
 .topnav {
     background-color: var(--pinkMenu);
-    padding: 20px 20px 20px 20px;
-    overflow: hidden;
+    padding: 20px;
     width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .topnav a {
     background-color: var(--pinkMenu);
-    float: left;
-    display: block;
     color: black;
     font-weight: 400;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 30px;
-
 }
 
 .topnav a:hover {
@@ -170,13 +180,11 @@ code {
     transition: all .3s ease-in-out;
 }
 
-/* Dropdown container */
 .dropdown {
     float: left;
     overflow: hidden;
 }
 
-/* Dropdown button (styled like nav links) */
 .dropbtn {
     font-size: 30px;
     border: none;
@@ -188,24 +196,20 @@ code {
     cursor: pointer;
 }
 
-/* Same hover effect as nav links */
 .dropdown:hover .dropbtn {
     background-color: pink;
     transition: all .3s ease-in-out;
 }
 
-/* Dropdown content */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--pinkMenu);
     min-width: 160px;
-    z-index: 1;
+    z-index: 10;
 }
 
-/* Dropdown links */
 .dropdown-content a {
-    float: none;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -213,12 +217,33 @@ code {
     text-align: left;
 }
 
-/* Hover effect for dropdown items */
 .dropdown-content a:hover {
     background-color: pink;
 }
 
-/* Show dropdown when hovering over container */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 1000px) {
+    .content {
+        flex-direction: column !important;
+        padding: 20px !important;
+    }
+
+    .text {
+        text-align: center !important;
+    }
+
+    .image img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .topnav {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px;
+    }
 }
